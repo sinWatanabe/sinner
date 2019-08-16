@@ -3,6 +3,7 @@
    "plugins": [
        "@babel/plugin-transform-runtime",
         "@babel/plugin-proposal-class-properties",
+        "transform-remove-strict-mode",
         ["component",
             {
                 "libraryName": "mint-ui",
@@ -11,5 +12,6 @@
         ]
         
     ],
+    "ignore":["./src/lib/mui/js/mui.min.js"],
     
 }

@@ -32,12 +32,15 @@ export default{
     },
     methods:{
         getNewsList(){
+            var vm=this;
             this.$http.get('api/getnewslist').then(result =>{
                 if(result.body.status === 0){
                     this.newslist = result.body.message;
                 }else{
                     Toast('失败');
                 }
+            }).catch(function(error){
+                vm.errorMsg=error;
             });
         }
     }

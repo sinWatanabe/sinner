@@ -44,6 +44,7 @@ export default {
       this.getComments();
     },
     postComment(){
+      var vm=this;
       if(this.msg.trim().length === 0){
         return Toast("评论内容不能为空！");
       }
@@ -57,7 +58,9 @@ export default {
               this.comments.unshift(cmt);
               this.msg="";
           }  
-      });
+      }).catch(function(error){
+                vm.errorMsg=error;
+            });
     }
   },
   props: ["id"]

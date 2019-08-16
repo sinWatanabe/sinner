@@ -12,11 +12,18 @@ Vue.http.options.root = 'http://www.liulongbin.top:3005';
 Vue.http.options.emulateJSON = true;
 import './lib/mui/css/mui.min.css'
 import './lib/mui/css/icons-extra.css'
-import { Header, Swipe, SwipeItem, Button} from 'mint-ui'
-Vue.component(Header.name,Header);
-Vue.component(Swipe.name, Swipe);
-Vue.component(SwipeItem.name, SwipeItem);
-Vue.component(Button.name, Button);
+
+// import { Header, Swipe, SwipeItem, Button, Lazyload} from 'mint-ui'
+// Vue.component(Header.name,Header);
+// Vue.component(Swipe.name, Swipe);
+// Vue.component(SwipeItem.name, SwipeItem);
+// Vue.component(Button.name, Button);
+// Vue.use(Lazyload);
+
+import MintUI from 'mint-ui'
+Vue.use(MintUI)
+import 'mint-ui/lib/style.css'
+
 import app from './App.vue'
 import router from './router.js'
 import { format } from "util";

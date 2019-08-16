@@ -28,12 +28,15 @@ export default{
     },
     methods:{
         getNewsInfo(){
+            var vm=this;
             this.$http.get("api/getnew/"+this.id).then(result =>{
                 if(result.body.status === 0){
                     this.newsinfo = result.body.message[0];
                 }else{
                     Toast('失败');
                 }
+            }).catch(function(error){
+                vm.errorMsg=error;
             });
         }
     },

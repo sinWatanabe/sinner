@@ -63,12 +63,15 @@ export default{
     },
     methods:{
         getLunbotu(){
+            var vm=this;
             this.$http.get('api/getlunbo').then(result =>{
                 if(result.body.status === 0){
                     this.lunbotuList = result.body.message;
                 }else{
                     Toast('失败');
                 }
+            }).catch(function(error){
+                vm.errorMsg=error;
             });
         }
     }
